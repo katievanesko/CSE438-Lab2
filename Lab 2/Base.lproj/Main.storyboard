@@ -18,11 +18,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RWq-SH-1Mt" userLabel="Pet View">
                                 <rect key="frame" x="0.0" y="44" width="375" height="451"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cat" translatesAutoresizingMaskIntoConstraints="NO" id="NCD-8G-kYt">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dog" translatesAutoresizingMaskIntoConstraints="NO" id="NCD-8G-kYt">
                                         <rect key="frame" x="112.66666666666669" y="150.66666666666666" width="150" height="149.99999999999997"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.74369940729999995" green="0.87330011230000004" blue="0.99336069819999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.99336069819999995" green="0.43825646819473707" blue="0.44366939350163925" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="NCD-8G-kYt" firstAttribute="centerX" secondItem="RWq-SH-1Mt" secondAttribute="centerX" id="MII-xh-Ypy"/>
                                     <constraint firstItem="NCD-8G-kYt" firstAttribute="centerY" secondItem="RWq-SH-1Mt" secondAttribute="centerY" id="XQ5-Uk-Wn7"/>
@@ -104,6 +104,7 @@
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ysr-rR-K2h" userLabel="Happiness Display View" customClass="DisplayView" customModule="Lab_2" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="26" width="327" height="35"/>
+                                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="LXV-p6-iJ7"/>
                                                 </constraints>
@@ -143,6 +144,7 @@
                                             </label>
                                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="MUy-Y2-wjP" userLabel="Food Level Display View" customClass="DisplayView" customModule="Lab_2" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="26" width="327" height="35"/>
+                                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="RCE-19-ysp"/>
                                                 </constraints>
@@ -207,6 +209,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Cat" width="150" height="150"/>
+        <image name="Dog" width="150" height="150"/>
     </resources>
 </document>

@@ -25,26 +25,32 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         happinessDisp.color = petView.backgroundColor ?? .black
-        foodDisp.color = petView.backgroundColor ?? .red
+        foodDisp.color = petView.backgroundColor ?? .black
         
         
-
+        
     }
 
     @IBAction func play(_ sender: Any) {
-        happinessLabel += 1
-        happinessTotal.text = String(happinessLabel)
-        happinessDisp.value += 0.1
-        happinessDisp.animateValue(to: happinessDisp.value)
+        if foodDisp.value > 0 {
+            happinessLabel += 1
+            happinessTotal.text = String(happinessLabel)
+            happinessDisp.value += 0.1
+            happinessDisp.animateValue(to: happinessDisp.value)
+            foodDisp.value -= 0.1
+        }
+        
         
        
     }
     
     @IBAction func feed(_ sender: Any) {
-        foodLabel += 1
-        foodTotal.text = String(foodLabel)
-        foodDisp.value += 0.1
-        foodDisp.animateValue(to: foodDisp.value)
+        if foodDisp.value < 0.9 {
+            foodLabel += 1
+            foodTotal.text = String(foodLabel)
+            foodDisp.value += 0.1
+            foodDisp.animateValue(to: foodDisp.value)
+        }
     }
     
     func updateDisplay(){

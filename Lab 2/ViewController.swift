@@ -33,6 +33,16 @@ class ViewController: UIViewController {
         changeAnimal(animal: dog)
         
     }
+    
+    @IBAction func feed(_ sender: Any) {
+        if foodDisp.value < 0.9 {
+            foodLabel += 1
+            foodTotal.text = String(foodLabel)
+            foodDisp.value += 0.1
+            foodDisp.animateValue(to: foodDisp.value)
+            currentPet?.feedAnimal()
+        }
+    }
 
     @IBAction func play(_ sender: Any) {
         if foodDisp.value > 0 {
@@ -41,48 +51,58 @@ class ViewController: UIViewController {
             happinessDisp.value += 0.1
             happinessDisp.animateValue(to: happinessDisp.value)
             foodDisp.value -= 0.1
-        }
-    }
-    
-    @IBAction func feed(_ sender: Any) {
-        if foodDisp.value < 0.9 {
-            foodLabel += 1
-            foodTotal.text = String(foodLabel)
-            foodDisp.value += 0.1
-            foodDisp.animateValue(to: foodDisp.value)
+            currentPet?.playAnimal()
         }
     }
     
     func changeAnimal(animal:Animal){
         currentPet = animal
+        petImg.image = animal.image
         petView.backgroundColor = animal.backgroundColor
+        
         happinessDisp.color = petView.backgroundColor ?? .black
         foodDisp.color = petView.backgroundColor ?? .black
-        petImg.image = animal.image
+        
+        foodDisp.value = animal.currFoodLevel
+        foodLabel = animal.totalFeeds
+        foodTotal.text = String(foodLabel)
+        
+        happinessDisp.value = animal.currHappinessLevel
+        happinessLabel = animal.totalPlays
+        happinessTotal.text = String(happinessLabel)
     }
     
     
     @IBAction func changeToDog(_ sender: Any) {
-        changeAnimal(animal: dog)
+        if currentPet != dog {
+            changeAnimal(animal: dog)
+        }
     }
     
     
     @IBAction func changeToCat(_ sender: Any) {
-        changeAnimal(animal: cat)
+        if currentPet != cat {
+            changeAnimal(animal: cat)
+        }
     }
     
     
     @IBAction func changeToBird(_ sender: Any) {
-        changeAnimal(animal: bird)
+        if currentPet != bird {
+            changeAnimal(animal: bird)
+        }
     }
     
     @IBAction func changeToBunny(_ sender: Any) {
-        changeAnimal(animal: bunny)
+        if currentPet != bunny {
+            changeAnimal(animal: bunny)
+        }
     }
     
     @IBAction func changeToFish(_ sender: Any) {
-        changeAnimal(animal: fish)
-
+        if currentPet != fish {
+            changeAnimal(animal: fish)
+        }
     }
     
     

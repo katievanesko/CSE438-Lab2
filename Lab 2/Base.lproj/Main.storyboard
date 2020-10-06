@@ -22,7 +22,7 @@
                                         <rect key="frame" x="112.66666666666669" y="150.66666666666666" width="150" height="149.99999999999997"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.99336069819999995" green="0.43825646819473707" blue="0.44366939350163925" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.2424273143755" green="0.4779009861605355" blue="0.93888842838196285" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="NCD-8G-kYt" firstAttribute="centerX" secondItem="RWq-SH-1Mt" secondAttribute="centerX" id="MII-xh-Ypy"/>
                                     <constraint firstItem="NCD-8G-kYt" firstAttribute="centerY" secondItem="RWq-SH-1Mt" secondAttribute="centerY" id="XQ5-Uk-Wn7"/>
@@ -62,22 +62,37 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mlg-bo-YA4">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="Dog"/>
+                                        <connections>
+                                            <action selector="changeToDog:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dJr-Bi-te7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oaz-nZ-cJe">
                                         <rect key="frame" x="63.333333333333329" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="Cat"/>
+                                        <connections>
+                                            <action selector="changeToCat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Al7-wb-CK1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HK-Jj-22X">
                                         <rect key="frame" x="126.66666666666666" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="Bird"/>
+                                        <connections>
+                                            <action selector="changeToBird:" destination="BYZ-38-t0r" eventType="touchUpInside" id="odP-Da-ivT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRi-b7-FnO">
                                         <rect key="frame" x="183.33333333333334" y="0.0" width="43" height="30"/>
                                         <state key="normal" title="Bunny"/>
+                                        <connections>
+                                            <action selector="changeToBunny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q5F-dd-70d"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Nc-DI-WNg">
                                         <rect key="frame" x="253" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="Fish"/>
+                                        <connections>
+                                            <action selector="changeToFish:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w8r-Zy-ktz"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -200,6 +215,7 @@
                         <outlet property="foodTotal" destination="D3b-pR-4Cy" id="cln-wC-SYZ"/>
                         <outlet property="happinessDisp" destination="ysr-rR-K2h" id="OtK-7O-kUj"/>
                         <outlet property="happinessTotal" destination="YL3-9d-zqw" id="BVT-Fc-FvX"/>
+                        <outlet property="petImg" destination="NCD-8G-kYt" id="2mU-Ce-mQ2"/>
                         <outlet property="petView" destination="RWq-SH-1Mt" id="nA8-90-Ezq"/>
                     </connections>
                 </viewController>

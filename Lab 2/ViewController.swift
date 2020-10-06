@@ -41,17 +41,20 @@ class ViewController: UIViewController {
             foodDisp.value += 0.1
             foodDisp.animateValue(to: foodDisp.value)
             currentPet?.feedAnimal()
+            print(foodDisp.value*10)
         }
     }
 
     @IBAction func play(_ sender: Any) {
-        if foodDisp.value > 0 {
+        if foodDisp.value >= 0.1 {
             happinessLabel += 1
             happinessTotal.text = String(happinessLabel)
             happinessDisp.value += 0.1
             happinessDisp.animateValue(to: happinessDisp.value)
             foodDisp.value -= 0.1
             currentPet?.playAnimal()
+            print(happinessDisp.value*10)
+            print(foodDisp.value*10)
         }
     }
     

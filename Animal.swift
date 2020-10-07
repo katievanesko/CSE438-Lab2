@@ -23,7 +23,7 @@ class Animal {
     //Init
     init(background : UIColor, img : UIImage){
         backgroundColor = background
-        self.image = img
+        image = img
     }
     
     //Behavior

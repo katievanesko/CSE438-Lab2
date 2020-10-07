@@ -19,60 +19,59 @@ class ViewController: UIViewController {
     @IBOutlet weak var petView: UIView!
     @IBOutlet weak var petImg: UIImageView!
     
-    var dog = Animal(background: UIColor(red: 254/255, green: 100/255, blue: 108/255, alpha: 1), img: UIImage(named:"Dog")!)
-    var cat = Animal(background: UIColor(red: 62/255, green: 122/255, blue: 239/255, alpha: 1), img: UIImage(named:"Cat")!)
-    var bird = Animal(background: UIColor(red: 239/255, green: 204/255, blue: 50/255, alpha: 1), img: UIImage(named:"Bird")!)
-    var bunny = Animal(background: UIColor(red: 167/255, green: 255/255, blue: 179/255, alpha: 1), img: UIImage(named:"Bunny")!)
-    var fish = Animal(background: UIColor(red: 176/255, green: 143/255, blue: 255/255, alpha: 1), img: UIImage(named:"Fish")!)
     var happinessLabel = 0
     var foodLabel = 0
     var currentPet : Animal?
     
+    var dog = Animal(background: UIColor(named:"dogColors")!, img: UIImage(named:"Dog")!)
+    var cat = Animal(background: UIColor(named:"catColors")!, img: UIImage(named:"Cat")!)
+    var bird = Animal(background: UIColor(named:"birdColors")!, img: UIImage(named:"Bird")!)
+    var bunny = Animal(background: UIColor(named:"bunnyColors")!, img: UIImage(named:"Bunny")!)
+    var fish = Animal(background: UIColor(named:"fishColors")!, img: UIImage(named:"Fish")!)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         changeAnimal(animal: dog)
-        
+        petView.backgroundColor = dog.backgroundColor
+        petImg.image = dog.image
     }
     
     @IBAction func feed(_ sender: Any) {
         if foodDisp.value < 0.9 {
             foodLabel += 1
-            foodTotal.text = String(foodLabel)
+            foodTotal.text = "fed: " + String(foodLabel)
             foodDisp.value += 0.1
             foodDisp.animateValue(to: foodDisp.value)
             currentPet?.feedAnimal()
-            print(foodDisp.value*10)
         }
     }
 
     @IBAction func play(_ sender: Any) {
         if foodDisp.value >= 0.1 {
             happinessLabel += 1
-            happinessTotal.text = String(happinessLabel)
+            happinessTotal.text = "played: " + String(happinessLabel)
             happinessDisp.value += 0.1
             happinessDisp.animateValue(to: happinessDisp.value)
             foodDisp.value -= 0.1
             currentPet?.playAnimal()
-            print(happinessDisp.value*10)
-            print(foodDisp.value*10)
         }
     }
     
     func changeAnimal(animal:Animal){
         currentPet = animal
-        petImg.image = animal.image
         petView.backgroundColor = animal.backgroundColor
-        
+        petImg.image = animal.image
+
         happinessDisp.color = petView.backgroundColor ?? .black
         foodDisp.color = petView.backgroundColor ?? .black
         
         foodDisp.value = animal.currFoodLevel
         foodLabel = animal.totalFeeds
-        foodTotal.text = String(foodLabel)
+        foodTotal.text = "fed: " + String(foodLabel)
         
         happinessDisp.value = animal.currHappinessLevel
         happinessLabel = animal.totalPlays
-        happinessTotal.text = String(happinessLabel)
+        happinessTotal.text = "played: " + String(happinessLabel)
     }
     
     

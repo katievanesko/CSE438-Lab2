@@ -34,8 +34,6 @@ class ViewController: UIViewController {
         changeAnimal(animal: dog)
         petView.backgroundColor = dog.backgroundColor
         petImg.image = dog.image
-        //gif loading from https://medium.com/@javedmultani16/how-to-load-gif-image-in-swift-461254f8107b
-
     }
     
     @IBAction func feed(_ sender: Any) {
@@ -60,13 +58,14 @@ class ViewController: UIViewController {
             currentPet?.playAnimal()
             if currentPet == dog {
                 playSound(sound: "bark", type: "mp3")
-                if happinessDisp.value > 1.0{
+                //gif loading from https://medium.com/@javedmultani16/how-to-load-gif-image-in-swift-461254f8107b
+                let gif = UIImage.gifImageWithName("dogsm")
+                if happinessDisp.value > 1.0 && dog.evolved == false{
                     playSound(sound: "fireworks", type: "mp3")
-                    let gif = UIImage.gifImageWithName("dogsm")
-                    dog.image = gif
                     petImg.image = firework
-                    // Delayed code example from: https://www.zerotoappstore.com/create-a-delay-or-wait-in-swift.html
-                    let secondsToDelay = 2.0
+                    dog.image = gif
+                    dog.evolved = true
+                    let secondsToDelay = 2.0 // Delayed code example from: https://www.zerotoappstore.com/create-a-delay-or-wait-in-swift.html
                     DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
                         self.petImg.image = gif
                     }
@@ -74,10 +73,13 @@ class ViewController: UIViewController {
             }
             else if currentPet == cat {
                 playSound(sound: "meow", type: "mp3")
-                if happinessDisp.value > 1.0{
+                let gif = UIImage.gifImageWithName("catsm")
+                if happinessDisp.value > 1.0 && cat.evolved == false{
+                    print((cat.image == gif))
+                    print(happinessDisp.value)
                     playSound(sound: "fireworks", type: "mp3")
-                    let gif = UIImage.gifImageWithName("catsm")
                     cat.image = gif
+                    cat.evolved = true
                     petImg.image = firework
                     let secondsToDelay = 2.0
                     DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
@@ -87,10 +89,11 @@ class ViewController: UIViewController {
             }
             else if currentPet == bird {
                 playSound(sound: "chirp", type: "mp3")
-                if happinessDisp.value > 1.0{
+                let gif = UIImage.gifImageWithName("birdsm")
+                if happinessDisp.value > 1.0 && bird.evolved == false{
                     playSound(sound: "fireworks", type: "mp3")
-                    let gif = UIImage.gifImageWithName("birdsm")
                     bird.image = gif
+                    bird.evolved = true
                     petImg.image = firework
                     let secondsToDelay = 2.0
                     DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
@@ -100,10 +103,11 @@ class ViewController: UIViewController {
             }
             else if currentPet == bunny {
                 playSound(sound: "rabbit", type: "mp3")
-                if happinessDisp.value > 1.0{
+                let gif = UIImage.gifImageWithName("bunnysm")
+                if happinessDisp.value > 1.0 && bunny.evolved == false{
                     playSound(sound: "fireworks", type: "mp3")
-                    let gif = UIImage.gifImageWithName("bunnysm")
                     bunny.image = gif
+                    bunny.evolved = true
                     petImg.image = firework
                     let secondsToDelay = 2.0
                     DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
@@ -113,10 +117,11 @@ class ViewController: UIViewController {
             }
             else {
                 playSound(sound: "splash", type: "mp3")
-                if happinessDisp.value > 1.0{
+                let gif = UIImage.gifImageWithName("animated-fish")
+                if happinessDisp.value > 1.0 && fish.evolved == false{
                     playSound(sound: "fireworks", type: "mp3")
-                    let gif = UIImage.gifImageWithName("fishsm")
                     fish.image = gif
+                    fish.evolved = true
                     petImg.image = firework
                     let secondsToDelay = 2.0
                     DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {

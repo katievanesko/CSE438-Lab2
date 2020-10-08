@@ -18,6 +18,7 @@ class Animal {
     var currHappinessLevel: CGFloat = 0
     var totalFeeds : Int = 0
     var totalPlays : Int = 0
+    var evolved : Bool = false
     
     
     //Init

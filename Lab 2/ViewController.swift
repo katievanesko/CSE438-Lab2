@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var petView: UIView!
     @IBOutlet weak var petImg: UIImageView!
-    
+        
     var happinessLabel = 0
     var foodLabel = 0
     var currentPet : Animal?
@@ -34,7 +34,6 @@ class ViewController: UIViewController {
         changeAnimal(animal: dog)
         petView.backgroundColor = dog.backgroundColor
         petImg.image = dog.image
-        
         //gif loading from https://medium.com/@javedmultani16/how-to-load-gif-image-in-swift-461254f8107b
 
     }
@@ -51,6 +50,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func play(_ sender: Any) {
+        let firework = UIImage.gifImageWithName("celebrate")
         if foodDisp.value >= 0.1 {
             happinessLabel += 1
             happinessTotal.text = "played: " + String(happinessLabel)
@@ -64,27 +64,38 @@ class ViewController: UIViewController {
                     playSound(sound: "fireworks", type: "mp3")
                     let gif = UIImage.gifImageWithName("dogsm")
                     dog.image = gif
-                    petImg.image = gif
+                    petImg.image = firework
+                    // Delayed code example from: https://www.zerotoappstore.com/create-a-delay-or-wait-in-swift.html
+                    let secondsToDelay = 2.0
+                    DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
+                        self.petImg.image = gif
+                    }
                 }
             }
             else if currentPet == cat {
                 playSound(sound: "meow", type: "mp3")
                 if happinessDisp.value > 1.0{
                     playSound(sound: "fireworks", type: "mp3")
-
                     let gif = UIImage.gifImageWithName("catsm")
                     cat.image = gif
-                    petImg.image = gif
+                    petImg.image = firework
+                    let secondsToDelay = 2.0
+                    DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
+                        self.petImg.image = gif
+                    }
                 }
             }
             else if currentPet == bird {
                 playSound(sound: "chirp", type: "mp3")
                 if happinessDisp.value > 1.0{
                     playSound(sound: "fireworks", type: "mp3")
-
                     let gif = UIImage.gifImageWithName("birdsm")
                     bird.image = gif
-                    petImg.image = gif
+                    petImg.image = firework
+                    let secondsToDelay = 2.0
+                    DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
+                        self.petImg.image = gif
+                    }
                 }
             }
             else if currentPet == bunny {
@@ -93,7 +104,11 @@ class ViewController: UIViewController {
                     playSound(sound: "fireworks", type: "mp3")
                     let gif = UIImage.gifImageWithName("bunnysm")
                     bunny.image = gif
-                    petImg.image = gif
+                    petImg.image = firework
+                    let secondsToDelay = 2.0
+                    DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
+                        self.petImg.image = gif
+                    }
                 }
             }
             else {
@@ -102,7 +117,11 @@ class ViewController: UIViewController {
                     playSound(sound: "fireworks", type: "mp3")
                     let gif = UIImage.gifImageWithName("fishsm")
                     fish.image = gif
-                    petImg.image = gif
+                    petImg.image = firework
+                    let secondsToDelay = 2.0
+                    DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
+                        self.petImg.image = gif
+                    }
                 }
             }
         }

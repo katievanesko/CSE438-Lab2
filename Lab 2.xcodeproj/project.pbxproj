@@ -24,6 +24,7 @@
 		29D1A557252F9C0600348DCB /* dogsm.gif in Resources */ = {isa = PBXBuildFile; fileRef = 29D1A556252F9C0600348DCB /* dogsm.gif */; };
 		29D1A559252F9CB900348DCB /* bunnysm.gif in Resources */ = {isa = PBXBuildFile; fileRef = 29D1A558252F9CB900348DCB /* bunnysm.gif */; };
 		29D1A55B252FA6B000348DCB /* fireworks.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 29D1A55A252FA6B000348DCB /* fireworks.mp3 */; };
+		29D1A55F252FAE6E00348DCB /* celebrate.gif in Resources */ = {isa = PBXBuildFile; fileRef = 29D1A55E252FAE6E00348DCB /* celebrate.gif */; };
 		29F91078252F7D6500707B2A /* bark.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 29F91077252F7D6500707B2A /* bark.mp3 */; };
 		29F9107A252F7DF300707B2A /* meow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 29F91079252F7DF300707B2A /* meow.mp3 */; };
 		29F9107C252F7E9F00707B2A /* chirp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 29F9107B252F7E9F00707B2A /* chirp.mp3 */; };
@@ -51,6 +52,7 @@
 		29D1A556252F9C0600348DCB /* dogsm.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dogsm.gif; sourceTree = "<group>"; };
 		29D1A558252F9CB900348DCB /* bunnysm.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bunnysm.gif; sourceTree = "<group>"; };
 		29D1A55A252FA6B000348DCB /* fireworks.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fireworks.mp3; sourceTree = "<group>"; };
+		29D1A55E252FAE6E00348DCB /* celebrate.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = celebrate.gif; sourceTree = "<group>"; };
 		29F91077252F7D6500707B2A /* bark.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bark.mp3; sourceTree = "<group>"; };
 		29F91079252F7DF300707B2A /* meow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meow.mp3; sourceTree = "<group>"; };
 		29F9107B252F7E9F00707B2A /* chirp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chirp.mp3; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				29D1A554252F9B3100348DCB /* catsm.gif */,
 				29D1A556252F9C0600348DCB /* dogsm.gif */,
+				29D1A55E252FAE6E00348DCB /* celebrate.gif */,
 				29D1A543252F96C900348DCB /* animated-fish.gif */,
 				29D1A558252F9CB900348DCB /* bunnysm.gif */,
 				29D1A550252F9A6900348DCB /* birdsm.gif */,
@@ -191,6 +194,7 @@
 			files = (
 				29262357252AD2E0006AD380 /* LaunchScreen.storyboard in Resources */,
 				29D1A548252F96C900348DCB /* animated-fish.gif in Resources */,
+				29D1A55F252FAE6E00348DCB /* celebrate.gif in Resources */,
 				29F91078252F7D6500707B2A /* bark.mp3 in Resources */,
 				29D1A555252F9B3100348DCB /* catsm.gif in Resources */,
 				29F9107A252F7DF300707B2A /* meow.mp3 in Resources */,

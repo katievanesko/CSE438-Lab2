@@ -34,6 +34,9 @@ class ViewController: UIViewController {
         changeAnimal(animal: dog)
         petView.backgroundColor = dog.backgroundColor
         petImg.image = dog.image
+        
+        //gif loading from https://medium.com/@javedmultani16/how-to-load-gif-image-in-swift-461254f8107b
+
     }
     
     @IBAction func feed(_ sender: Any) {
@@ -43,6 +46,7 @@ class ViewController: UIViewController {
             foodDisp.value += 0.1
             foodDisp.animateValue(to: foodDisp.value)
             currentPet?.feedAnimal()
+            playSound(sound: "munching", type: "mp3")
         }
     }
 
@@ -54,6 +58,53 @@ class ViewController: UIViewController {
             happinessDisp.animateValue(to: happinessDisp.value)
             foodDisp.value -= 0.1
             currentPet?.playAnimal()
+            if currentPet == dog {
+                playSound(sound: "bark", type: "mp3")
+                if happinessDisp.value > 1.0{
+                    playSound(sound: "fireworks", type: "mp3")
+                    let gif = UIImage.gifImageWithName("dogsm")
+                    dog.image = gif
+                    petImg.image = gif
+                }
+            }
+            else if currentPet == cat {
+                playSound(sound: "meow", type: "mp3")
+                if happinessDisp.value > 1.0{
+                    playSound(sound: "fireworks", type: "mp3")
+
+                    let gif = UIImage.gifImageWithName("catsm")
+                    cat.image = gif
+                    petImg.image = gif
+                }
+            }
+            else if currentPet == bird {
+                playSound(sound: "chirp", type: "mp3")
+                if happinessDisp.value > 1.0{
+                    playSound(sound: "fireworks", type: "mp3")
+
+                    let gif = UIImage.gifImageWithName("birdsm")
+                    bird.image = gif
+                    petImg.image = gif
+                }
+            }
+            else if currentPet == bunny {
+                playSound(sound: "rabbit", type: "mp3")
+                if happinessDisp.value > 1.0{
+                    playSound(sound: "fireworks", type: "mp3")
+                    let gif = UIImage.gifImageWithName("bunnysm")
+                    bunny.image = gif
+                    petImg.image = gif
+                }
+            }
+            else {
+                playSound(sound: "splash", type: "mp3")
+                if happinessDisp.value > 1.0{
+                    playSound(sound: "fireworks", type: "mp3")
+                    let gif = UIImage.gifImageWithName("fishsm")
+                    fish.image = gif
+                    petImg.image = gif
+                }
+            }
         }
     }
     
@@ -110,3 +161,4 @@ class ViewController: UIViewController {
     
     
 }
+

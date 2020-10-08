@@ -13,7 +13,7 @@ class Animal {
     
     //Data
     let backgroundColor: UIColor
-    let image : UIImage?
+    var image : UIImage?
     var currFoodLevel : CGFloat = 0
     var currHappinessLevel: CGFloat = 0
     var totalFeeds : Int = 0

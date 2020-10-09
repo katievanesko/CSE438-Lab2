@@ -19,12 +19,16 @@ class Animal {
     var totalFeeds : Int = 0
     var totalPlays : Int = 0
     var evolved : Bool = false
+    let sound : String
+    let gif : String
     
     
     //Init
-    init(background : UIColor, img : UIImage){
+    init(background : UIColor, img : UIImage, sound : String, gif: String){
         backgroundColor = background
         image = img
+        self.sound = sound
+        self.gif = gif
     }
     
     //Behavior
@@ -37,6 +41,17 @@ class Animal {
         currFoodLevel -= 0.1
         currHappinessLevel += 1
         totalPlays += 1
+        playSound(sound: self.sound, type: "mp3")
+    }
+    
+    func evolve(){
+        let gif = UIImage.gifImageWithName(self.gif)
+        //gif loading from https://medium.com/@javedmultani16/how-to-load-gif-image-in-swift-461254f8107b
+        self.image = gif
+        self.evolved = true
+       
+
+        
     }
     
 }

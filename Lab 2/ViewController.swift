@@ -23,11 +23,11 @@ class ViewController: UIViewController {
     var foodLabel = 0
     var currentPet : Animal?
     
-    var dog = Animal(background: UIColor(named:"dogColors")!, img: UIImage(named:"Dog")!)
-    var cat = Animal(background: UIColor(named:"catColors")!, img: UIImage(named:"Cat")!)
-    var bird = Animal(background: UIColor(named:"birdColors")!, img: UIImage(named:"Bird")!)
-    var bunny = Animal(background: UIColor(named:"bunnyColors")!, img: UIImage(named:"Bunny")!)
-    var fish = Animal(background: UIColor(named:"fishColors")!, img: UIImage(named:"Fish")!)
+    var dog = Animal(background: UIColor(named:"dogColors")!, img: UIImage(named:"Dog")!, sound: "bark", gif: "dogsm")
+    var cat = Animal(background: UIColor(named:"catColors")!, img: UIImage(named:"Cat")!, sound: "meow", gif:"catsm")
+    var bird = Animal(background: UIColor(named:"birdColors")!, img: UIImage(named:"Bird")!, sound: "chirp", gif: "birdsm")
+    var bunny = Animal(background: UIColor(named:"bunnyColors")!, img: UIImage(named:"Bunny")!, sound: "rabbit", gif: "bunnysm")
+    var fish = Animal(background: UIColor(named:"fishColors")!, img: UIImage(named:"Fish")!, sound: "splash", gif: "animated-fish")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,77 +56,14 @@ class ViewController: UIViewController {
             happinessDisp.animateValue(to: happinessDisp.value)
             foodDisp.value -= 0.1
             currentPet?.playAnimal()
-            if currentPet == dog {
-                playSound(sound: "bark", type: "mp3")
-                //gif loading from https://medium.com/@javedmultani16/how-to-load-gif-image-in-swift-461254f8107b
-                let gif = UIImage.gifImageWithName("dogsm")
-                if happinessDisp.value > 1.0 && dog.evolved == false{
-                    playSound(sound: "fireworks", type: "mp3")
-                    petImg.image = firework
-                    dog.image = gif
-                    dog.evolved = true
-                    let secondsToDelay = 2.0 // Delayed code example from: https://www.zerotoappstore.com/create-a-delay-or-wait-in-swift.html
-                    DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
-                        self.petImg.image = gif
-                    }
-                }
-            }
-            else if currentPet == cat {
-                playSound(sound: "meow", type: "mp3")
-                let gif = UIImage.gifImageWithName("catsm")
-                if happinessDisp.value > 1.0 && cat.evolved == false{
-                    print((cat.image == gif))
-                    print(happinessDisp.value)
-                    playSound(sound: "fireworks", type: "mp3")
-                    cat.image = gif
-                    cat.evolved = true
-                    petImg.image = firework
-                    let secondsToDelay = 2.0
-                    DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
-                        self.petImg.image = gif
-                    }
-                }
-            }
-            else if currentPet == bird {
-                playSound(sound: "chirp", type: "mp3")
-                let gif = UIImage.gifImageWithName("birdsm")
-                if happinessDisp.value > 1.0 && bird.evolved == false{
-                    playSound(sound: "fireworks", type: "mp3")
-                    bird.image = gif
-                    bird.evolved = true
-                    petImg.image = firework
-                    let secondsToDelay = 2.0
-                    DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
-                        self.petImg.image = gif
-                    }
-                }
-            }
-            else if currentPet == bunny {
-                playSound(sound: "rabbit", type: "mp3")
-                let gif = UIImage.gifImageWithName("bunnysm")
-                if happinessDisp.value > 1.0 && bunny.evolved == false{
-                    playSound(sound: "fireworks", type: "mp3")
-                    bunny.image = gif
-                    bunny.evolved = true
-                    petImg.image = firework
-                    let secondsToDelay = 2.0
-                    DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
-                        self.petImg.image = gif
-                    }
-                }
-            }
-            else {
-                playSound(sound: "splash", type: "mp3")
-                let gif = UIImage.gifImageWithName("animated-fish")
-                if happinessDisp.value > 1.0 && fish.evolved == false{
-                    playSound(sound: "fireworks", type: "mp3")
-                    fish.image = gif
-                    fish.evolved = true
-                    petImg.image = firework
-                    let secondsToDelay = 2.0
-                    DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
-                        self.petImg.image = gif
-                    }
+            
+            if happinessDisp.value > 1.0 && self.currentPet?.evolved == false{
+                playSound(sound: "fireworks", type: "mp3")
+                petImg.image = firework
+                self.currentPet?.evolve()
+                let secondsToDelay = 2.0 // Delayed code example from: https://www.zerotoappstore.com/create-a-delay-or-wait-in-swift.html
+                DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
+                    self.petImg.image = self.currentPet?.image
                 }
             }
         }
